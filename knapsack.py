@@ -7,7 +7,7 @@ def knapsack(weight,profit,capacity,n):
         #decrease the index by 1
         return knapsack(weight,profit,capacity,n-1)
     else:
-        #
+        # return max out of two cases:if included it gives the adds the profit and deducts the capacity , if excluded deducts the index
         return max(knapsack(weight,profit,capacity,n-1),profit[n]+knapsack(weight,profit,capacity-weight[n-1],n-1))
 weight=[41, 50, 49, 59, 55, 57, 60]
 profit =[442, 525, 511, 593, 546, 564, 617]
