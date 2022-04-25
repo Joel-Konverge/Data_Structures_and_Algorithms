@@ -13,6 +13,20 @@ class Linkedlist():
         while cur_val.next:
             cur_val=cur_val.next
         cur_val.next=Node(data)
+    def insert_after(self,prev,data):
+        data=Node(data)
+        data.next=prev.next
+        prev.next=data
+    def search(self,key):
+        if self.head is None:
+            return
+        cur=self.head
+        while cur:
+            if cur.data==key:
+                return "Found"
+            cur=cur.next
+        return "Not Found"
+
     def remove(self,data):
         if self.head is None:
             print("Empty Linkedlist")
@@ -79,6 +93,11 @@ l.head.next=Node(6)
 l.append(8)
 l.append(9)
 l.append(13)
+l.insert_after(l.head.next,3)
+print(f"Inserted 3 after {l.head.next}")
+l.disp()
+print()
+print(f"Search if 3 is found:{l.search(3)}")
 print("appended linkedlist")
 l.disp()
 print()
