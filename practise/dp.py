@@ -17,5 +17,4 @@ capacity=170
 n=len(profit)
 
 dp=[[None]*(capacity+1) for _ in range(n+1)]
-# print(dp)
 print(knapsack_dp(weight,profit,capacity,n,dp))
